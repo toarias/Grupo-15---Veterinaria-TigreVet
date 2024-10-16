@@ -21,6 +21,7 @@ header {
 .logo img {
     max-width: 100px;
     height: auto;
+    border-radius: 50%;
 }
 
 nav ul {
@@ -70,6 +71,16 @@ nav ul li a {
     text-align: center;
 }
 
+/* Menú hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #AB8752;
+    border-radius: 5px;
+}
+
 .menu-diagram img {
     max-width: 70%;
     height: 200px;
@@ -95,6 +106,40 @@ footer a {
     text-decoration: none;
 }
 
+ /* Funcionalidades para el menú hamburguesa */
+ #menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #222222;
+    text-align: left;
+    padding: 1rem;
+}
+
+#menu.show {
+    display: block;
+}
+
+#menu li {
+    margin-bottom: 10px;
+}
+
+#menu li a {
+    background-color: #AB8752;
+    color: #FFFFFF;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+#menu li a:hover {
+    background-color: #AB8752;
+}
 
 @media (max-width: 400px) {
     nav ul {

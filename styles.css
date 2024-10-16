@@ -25,8 +25,6 @@ header {
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
     gap: 1rem;
     margin: 0;
     padding: 0;
@@ -106,71 +104,97 @@ footer a {
     text-decoration: none;
 }
 
- /* Funcionalidades para el menú hamburguesa */
- #menu {
+/*-->Botones y navegacion<--*/
+/*Color de fondo de los botones*/
+nav{
+    background: #10520F;
+    overflow: hidden;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+}
+/*No muestra el botón de menú*/
+input{
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: #222222;
-    text-align: left;
-    padding: 1rem;
 }
-
-#menu.show {
+/*No muestra la hamburguesa*/
+label{
+    display: none;
+}
+/*Muestra los botones con la disposición horizontal para notebook*/
+ul{
+    display: flex;
+    justify-content: center;
+    margin-top:0;
+    padding:0;
+}
+/*propiedad de cada boton*/
+li{
     display: block;
+    background: #10520F;
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    border-radius: 50px;
+}
+/*Estilo boton con el mouse arriba*/
+li:hover{
+    filter:brightness(110%);
+    background: #999898;
+    border-bottom:0.5px solid #10520F;
 }
 
-#menu li {
-    margin-bottom: 10px;
-}
 
-#menu li a {
-    background-color: #AB8752;
-    color: #FFFFFF;
-    padding: 15px;
-    border-radius: 5px;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-}
-
-#menu li a:hover {
-    background-color: #AB8752;
-}
-
-@media (max-width: 400px) {
-    nav ul {
+/*cuando el dispositivo es como maximo de 700px*/
+@media all and (max-width:790px){
+    /*Muestra todo el contenido de todas las etiquetas ul*/
+    input:checked ~ ul{
+        display: block;
+        position: static;
+        margin-top:10px;
+    }
+    /*Cambia la forma de ver los elementos del nav*/
+    nav {
         flex-direction: column;
+        align-items: center;
+        height: auto;
     }
-
-    .card {
-        flex-direction: column;  
-        max-width: 90%;          
-        padding: 1rem;
+    /*Muestra el contenido de las etiquetas label*/
+    input:checked ~ label{
+        background: #999898;
     }
-
-    .color-info, .font-info {
-        margin: 1rem 0;          
+    /*Cambia el color de la hamburguesa*/
+    label:hover{
+        background:#999898;
     }
-
-    .menu-diagram img {
-        max-width: 80%;
+    /*Elimina el margen de los botones*/
+    li{
+        margin: 0; /* Elimina el margen de los botones */
+        border-radius: 0; /* Elimina el borde redondeado en los botones */
+        border-top: 1px solid #10520F; /* Agrega un borde superior para separar los botones */
+    }
+    /*Dibuja la hamburguesa como botón*/
+    label{
+        display: block; /* Mostrar el botón de hamburguesa */
+        cursor: pointer;
+        background-color: #10520F;
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+        margin: 10px;
+    }
+    /*Deja de mostrar el bloque contenedor de los botones horizontales*/
+    ul{
+        display: none; /* Ocultar la lista de enlaces inicialmente */
+        background-color: #10520F;
+        width: 100%;
+        text-align: center;
     }
 }
 
-/* Desktop (min-width 1280px) */
-@media (min-width: 1280px) {
-    header {
-        justify-content: flex-start;
-        gap: 5rem;
-    }
-    nav ul {
-        gap: 2rem;
-    }
-    .card {
-        flex-direction: row;
-    }
-}
+
+ 
